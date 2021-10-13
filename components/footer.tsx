@@ -1,4 +1,4 @@
-import React from "https://esm.sh/react@0.0.0-experimental-27659559e";
+import React from "https://esm.sh/react";
 
 import { None } from "../lib/util.ts";
 

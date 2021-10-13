@@ -1,7 +1,7 @@
 import React, {
   useEffect,
   useState,
-} from "https://esm.sh/react@0.0.0-experimental-27659559e";
+} from "https://esm.sh/react";
 
 import { PAGES } from "../lib/pages.ts";
 
