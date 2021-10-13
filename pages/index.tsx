@@ -1,6 +1,6 @@
 import React, { FC } from "https://esm.sh/react@17.0.2";
 
-export default function Page() {
+const Page: FC<None> = () => {
   return (
     <body>
       <Header />
@@ -8,7 +8,9 @@ export default function Page() {
       <Footer />
     </body>
   );
-}
+};
+
+export default Page;
 
 const Main: FC<None> = () => {
   return (
