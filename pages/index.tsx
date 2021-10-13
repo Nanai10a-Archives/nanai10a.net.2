@@ -8,11 +8,11 @@ const Page = ({}: None): JSX.Element => {
   const router = useRouter();
 
   return (
-    <body>
+    <>
       <Header />
       <Main route={router.routePath} />
       <Footer />
-    </body>
+    </>
   );
 };
 
@@ -29,9 +29,9 @@ type MainProps = {
 const Main = ({ route: _r }: MainProps): JSX.Element => {
   return (
     <>
-      <main>
+      <section>
         Contents
-      </main>
+      </section>
     </>
   );
 };
