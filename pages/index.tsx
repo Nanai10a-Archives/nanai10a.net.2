@@ -10,7 +10,7 @@ const Page = ({}: None): JSX.Element => {
   return (
     <>
       <Header />
-      <Main route={router.routePath} />
+      <Main route={router.pathname} />
       <Footer />
     </>
   );
