@@ -1,6 +1,6 @@
-import React, { FC } from "https://esm.sh/react@17.0.2";
+import React from "https://esm.sh/react@17.0.2";
+const Page = ({}: None): JSX.Element => {
 
-const Page: FC<None> = () => {
   return (
     <body>
       <Header />
@@ -12,7 +12,7 @@ const Page: FC<None> = () => {
 
 export default Page;
 
-const Main: FC<None> = () => {
+const Main = ({}: None): JSX.Element => {
   return (
     <>
       <main>
@@ -24,7 +24,7 @@ const Main: FC<None> = () => {
 
 type None = Record<string, never>;
 
-const Header: FC<None> = () => {
+const Header = ({}: None): JSX.Element => {
   return (
     <>
       <header>
@@ -36,7 +36,7 @@ const Header: FC<None> = () => {
   );
 };
 
-const Footer: FC<None> = () => {
+const Footer = ({}: None): JSX.Element => {
   return (
     <>
       <footer>
