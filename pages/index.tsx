@@ -1,4 +1,7 @@
-import React from "https://esm.sh/react@17.0.2";
+import React, {
+  useEffect,
+  useReducer,
+} from "https://esm.sh/react@0.0.0-experimental-27659559e";
 import { useRouter } from "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/hooks.ts";
 
 const Page = ({}: None): JSX.Element => {

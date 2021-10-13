@@ -1,4 +1,4 @@
-import React, { FC } from "https://esm.sh/react@v17.0.2";
+import React, { FC } from "https://esm.sh/react@0.0.0-experimental-27659559e";
 
 export default function App(
   { Page, pageProps }: { Page: FC; pageProps: Record<string, unknown> },
