@@ -1,0 +1,11 @@
+:root {
+  --main-col-1: #6fb88e;
+  --main-col-2: #2a7772;
+  --main-col-3: #004445;
+
+  --white-hard: #ffffff;
+  --white-soft: #e8e8e8;
+
+  --bg-hard: #011b1d;
+  --bg-soft: var(--main-col-2);
+}
