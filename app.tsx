@@ -4,7 +4,7 @@ export default function App(
   { Page, pageProps }: { Page: FC; pageProps: Record<string, unknown> },
 ) {
   return (
-    <main>
+    <>
       <head>
         <meta name="viewport" content="width=device-width" />
         {/* Roboto link */}
@@ -20,6 +20,6 @@ export default function App(
         />
       </head>
       <Page {...pageProps} />
-    </main>
+    </>
   );
 }
