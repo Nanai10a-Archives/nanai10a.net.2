@@ -1,0 +1,85 @@
+.all_display_container {
+  position: relative;
+
+  display: flex;
+  overflow: hidden;
+}
+
+.display_markdown_container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 800px) {
+  .display_markdown {
+    width: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .display_markdown {
+    width: calc(6 / 7 * 100%);
+  }
+}
+
+* {
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: calc(2em * 1.25);
+}
+h2 {
+  font-size: calc(1.5em * 1.25);
+}
+h3 {
+  font-size: calc(1.17em * 1.25);
+}
+h4 {
+  font-size: calc(1em * 1.25);
+}
+h5 {
+  font-size: calc(0.83em * 1.25);
+}
+h6 {
+  font-size: calc(0.67em * 1.25);
+}
+
+pre {
+  box-shadow: 0 0 6px black;
+}
+
+code {
+  font-family: Cica !important;
+}
+
+:not(pre) > code {
+  padding: 0.05em;
+  box-shadow: -2px 0 4px -2px black, 2px 0 4px -2px black;
+
+  background-color: #2d2d2d; /* from public/prism.css */
+}
+
+svg.feather {
+  width: 1em;
+  height: 1em;
+
+  position: relative;
+  bottom: calc(-1em * 0.2);
+
+  padding-left: 0.2em;
+}

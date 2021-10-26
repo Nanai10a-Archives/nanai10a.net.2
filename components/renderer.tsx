@@ -1,44 +1,71 @@
-import React, {
-  useEffect,
-  useState,
-} from "https://esm.sh/react";
+import React, { useMemo, useEffect, useState } from "https://esm.sh/react";
 
-import { PAGES } from "../lib/pages.ts";
+import * as Prism from "../public/prism.js";
 
-import Markdown from "./markdown.tsx";
+import { INDEXES } from "../lib/pages.ts";
+
+import "../style/components/renderer.css";
+
+const Renderer = ({ route, mds }: Props): JSX.Element => {
+  Prism;
+  const markdowns = useMemo<Array<JSX.Element>>(() => {
+    return mds.map((md, idx) => (
+      <div key={idx} className="display_markdown_container">
+        <section
+          className="display_markdown"
+          dangerouslySetInnerHTML={{ __html: md }}
+        />
+      </div>
+    ));
+  }, [mds]);
+
+  const [index, position] = useMemo<
+    [number | undefined, number | undefined]
+  >(() => {
+    const nowIdx = INDEXES[route];
+    if (nowIdx === undefined) {
+      // TODO: [任意のエラーコードページ]への移行処理
+      return [undefined, undefined];
+    }
+
+    return [nowIdx, nowIdx * -100];
+  }, [route]);
+
+  const [isSSR, setIsSSR] = useState<boolean>(true);
+  useEffect(
+    () =>
+      setTimeout(() => {
+        setIsSSR(false);
+      }),
+    []
+  );
+  const height = useMemo<number | undefined>(() => {
+    if (!isSSR) {
+      return eval(
+        `document.getElementsByClassName("display_markdown_container").item(${index}).offsetHeight`
+      );
+    } else {
+      return undefined;
+    }
+  }, [index, position]);
+
+  return (
+    <div
+      className="all_display_container"
+      style={{
+        left: `${position}vw`,
+        width: `calc(100vw * ${markdowns.length})`,
+        height: `calc(${height} + (32px + calc(100vh / 8)))`,
+      }}
+    >
+      {markdowns}
+    </div>
+  );
+};
 
 export type Props = {
   route: string;
-};
-
-const Renderer = ({ route }: Props): JSX.Element => {
-  const [cache, setCache] = useState<Record<string, string | undefined>>({});
-  useEffect(() => {
-    if (cache[route] === undefined) {
-      (async () => {
-        const url = PAGES[route];
-        if (url === undefined) {
-          return;
-        }
-
-        const response = await fetch(url);
-        const raw = await response.text();
-
-        const _cache = { ...cache };
-        _cache[route] = raw;
-
-        setCache(_cache);
-      })();
-    }
-    return;
-  }, [route]);
-
-  const raw = cache[route];
-  if (raw === undefined) {
-    return <>now loading...</>;
-  } else {
-    return <Markdown raw={raw} />;
-  }
+  mds: Array<string>;
 };
 
 export default Renderer;
