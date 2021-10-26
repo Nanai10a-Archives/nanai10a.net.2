@@ -27,3 +27,27 @@ body {
   background-attachment: fixed;
   animation: anim 12s cubic-bezier(0.5, 0, 0.5, 1) infinite none;
 }
+
+:root {
+  --scrollbar-width: 1vw;
+}
+
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-corner {
+  width: var(--scrollbar-width);
+  background-color: #585858;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #383838;
+}
+
+a {
+  color: var(--main-col-1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-col-2);
+}
