@@ -1,5 +1,6 @@
 import React, { FC } from "https://esm.sh/react";
 
+import "./style/app.css";
 import "./style/fonts.css";
 import "./style/colors.css";
 
