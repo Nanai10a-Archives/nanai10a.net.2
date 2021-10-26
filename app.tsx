@@ -1,5 +1,10 @@
 import React, { FC } from "https://esm.sh/react";
 
+import "./style/fonts.css";
+import "./style/colors.css";
+
+import "./public/prism.css";
+
 export default function App({
   Page,
   pageProps,
