@@ -1,0 +1,8 @@
+node_modules
+next-env.d.ts
+.git
+.husky
+.next
+style
+public
+old
