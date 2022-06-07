@@ -1,23 +1,24 @@
-import React, { useMemo, useEffect, useState } from "https://esm.sh/react";
+import "../style/components/renderer.css";
 
-import * as Prism from "../public/prism.js";
+import React, { useEffect, useMemo, useState } from "https://esm.sh/react";
 
 import { INDEXES } from "../lib/pages.ts";
-
-import "../style/components/renderer.css";
+import * as Prism from "../public/prism.js";
 
 const Renderer = ({ route, mds }: Props): JSX.Element => {
   Prism;
-  const markdowns = useMemo<Array<JSX.Element>>(() => {
-    return mds.map((md, idx) => (
+  const markdowns = useMemo<Array<JSX.Element>>(
+    () =>
+      mds.map((md, idx) => (
       <div key={idx} className="display_markdown_container">
         <section
           className="display_markdown"
           dangerouslySetInnerHTML={{ __html: md }}
         />
       </div>
-    ));
-  }, [mds]);
+    )),
+    [mds]
+  );
 
   const [index, position] = useMemo<
     [number | undefined, number | undefined]
@@ -35,8 +36,8 @@ const Renderer = ({ route, mds }: Props): JSX.Element => {
   useEffect(
     () =>
       setTimeout(() => {
-        setIsSSR(false);
-      }),
+      setIsSSR(false);
+    }),
     []
   );
   const height = useMemo<number | undefined>(() => {
@@ -44,9 +45,8 @@ const Renderer = ({ route, mds }: Props): JSX.Element => {
       return eval(
         `document.getElementsByClassName("display_markdown_container").item(${index}).offsetHeight`
       );
-    } else {
-      return undefined;
     }
+    return undefined;
   }, [index, position]);
 
   return (

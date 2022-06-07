@@ -1,8 +1,8 @@
+import "../style/components/header.css";
+
 import React, { useMemo } from "https://esm.sh/react";
 
 import { INDEXES_ARRAY } from "../lib/pages.ts";
-
-import "../style/components/header.css";
 
 const Header = ({ pushRoute, currentPath }: Props): JSX.Element => {
   const menuElems = useMemo<Array<JSX.Element>>(() => {

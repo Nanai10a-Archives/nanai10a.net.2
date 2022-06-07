@@ -161,13 +161,13 @@ rules:
   no-new-object: error
   no-plusplus: off
   no-tabs: error
-  no-underscore-dangle: warn
+  no-underscore-dangle: off
   no-unneeded-ternary: error
   no-whitespace-before-property: error
   nonblock-statement-body-position: error
   object-curly-newline:
     - error
-    - multiline: true
+    - consistent: true
   object-curly-spacing:
     - error
     - always
@@ -184,6 +184,8 @@ rules:
   operator-linebreak:
     - error
     - before
+    - overrides:
+        =: after
   padded-blocks:
     - error
     - never
@@ -201,7 +203,7 @@ rules:
   space-before-blocks: error
   space-before-function-paren:
     - error
-    - never
+    - always
   space-in-parens: error
   space-infix-ops: error
   space-unary-ops: error
@@ -224,7 +226,7 @@ rules:
   prefer-spread: error
   prefer-template: error
   rest-spread-spacing: error
-  sort-imports: error
+  sort-imports: off
   template-curly-spacing: error
   simple-import-sort/imports: error
   simple-import-sort/exports: error

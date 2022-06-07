@@ -1,7 +1,7 @@
-import marked from "https://esm.sh/marked";
 import dompurify from "https://esm.sh/dompurify";
 // @deno-types="https://esm.sh/@types/feather-icons/index.d.ts"
 import { icons } from "https://esm.sh/feather-icons";
+import marked from "https://esm.sh/marked";
 
 const fetchMarkdown = async (url: string) => {
   const resp = await fetch(url);

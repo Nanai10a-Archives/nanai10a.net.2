@@ -1,7 +1,7 @@
 const path = "../htmls/404.html";
 
-let file = undefined;
-let buffer = undefined;
+let file;
+let buffer;
 
 try {
   file = Deno.openSync(path, { read: true });
